@@ -19,7 +19,7 @@
 /**************************************************************************
  * DEFINITIONS
  **************************************************************************/
-#define EXIT_SUCCESS				0
+#define EXIT_SUCCESS                0
 #define TRUE                        1
 #define N_PHILOSOPHERS              5
 #define MAX_WAIT_TIME               3
