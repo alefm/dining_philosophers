@@ -50,7 +50,7 @@ void * philosopher_thread(void *arg){
 		pthread_mutex_lock(&forks[right_fork]);
 
 		philosopher_state[pos] = PHILOSOPHER_EAT;
-		philosopher_print_state(philosopher_state[pos], pos);
+		philosopher_print_state(philosopher_state[pos], pos+1);
 
 		if(philosopher_state[left_phil] == PHILOSOPHER_EAT || philosopher_state[right_phil] == PHILOSOPHER_EAT){
 		    printf("ERROR!\n");
@@ -58,7 +58,7 @@ void * philosopher_thread(void *arg){
 		sleep(random_wait_time());
 
 		philosopher_state[pos] = PHILOSOPHER_THINK;
-		philosopher_print_state(philosopher_state[pos], pos);
+		philosopher_print_state(philosopher_state[pos], pos+1);
 
 		pthread_mutex_unlock(&forks[left_fork]);
 		pthread_mutex_unlock(&forks[right_fork]);
