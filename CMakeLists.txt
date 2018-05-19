@@ -11,4 +11,4 @@ file(GLOB sources "app/src/*.c" )
 
 add_executable(dining_philosophers ${sources} ${headers})
 
-target_link_libraries( dining_philosophers )
+target_link_libraries( dining_philosophers pthread )
