@@ -55,9 +55,9 @@ void * philosopher_thread(void *arg){
 		if(philosopher_state[left_phil] == PHILOSOPHER_EAT || philosopher_state[right_phil] == PHILOSOPHER_EAT){
 		    printf("ERROR!\n");
 		}
-        sleep(random_wait_time());
+		sleep(random_wait_time());
 
-        philosopher_state[pos] = PHILOSOPHER_THINK;
+		philosopher_state[pos] = PHILOSOPHER_THINK;
 		philosopher_print_state(philosopher_state[pos], pos);
 
 		pthread_mutex_unlock(&forks[left_fork]);
@@ -75,7 +75,7 @@ int random_wait_time(){
 int main(int argc, char **argv) {
     srand(time(NULL));
 
-    /* Init all forks mutex */
+	/* Init all forks mutex */
 	for(int i = 0; i < N_PHILOSOPHERS; i++){
 		pthread_mutex_init (&forks[i], NULL);
 	}
